@@ -90,10 +90,11 @@ frontend
 3. slider
 4. product card
 5. category
-6. product list page
-7. single product page
-8. shopping cart
-9. deploy on docker using nginx
+6. contact
+7. product list page
+8. single product page
+9. shopping cart
+10. deploy on docker using nginx
 
 
 reference: https://www.youtube.com/watch?v=BCkWFblNLKU&ab_channel=LamaDev
@@ -117,7 +118,7 @@ type of frontend: SPA (SPA | SSR)
 2. footer
 3. slider
 4. product card
-
+5. categories
 
 5. 시연
 
