@@ -1,0 +1,119 @@
+---
+1. Goal
+
+
+e-commerce
+
+
+
+---
+2. Define a Cycle
+
+
+1. 기획
+2. 설계
+3. 기술선택
+4. 구현
+5. 시연
+6. 평가
+
+
+
+========================================================================
+==========================      Overall     ============================
+========================================================================
+
+---
+Overall
+
+
+1. 기획
+
+simple ecommerce
+
+
+2. 설계
+2-1. database
+a. install vuerd on VSC marketplace
+b. open ./database.vuerd.json
+
+2-2. frontend
+
+
+2-3. api
+
+3. 기술선택
+
+3-1. database
+a. type of database: relational (relational | nosql | key-value | etc)
+b. database: postgres (mysql | oracle | mariadb | postgres | etc)
+c. persistent framework: jpa (mybatis | jpa)
+d. erd tool: vuerd
+
+
+3-2. backend
+a. framework: springboot (spring legacy, springboot, nodejs, php, python, etc)
+b. jdk: 11 zulu-community
+c. testing: junit (junit | Spock)
+d. api-document: swagger (swagger, spring-REST-docs)
+e. api-test: restAssured
+
+
+3-3. frontend
+a. type of frontend: SPA (SPA | SSR(template | nextjs))
+
+
+3-4. devops
+a. web-server: nginx (apache | nginx | caddy)
+b. cloud: local (local | aws)
+c. stress-test: (k6)
+d. monitoring: (uptime-kuma | prometheus + grafana)
+
+
+
+========================================================================
+==========================      Cycle 1     ============================
+========================================================================
+
+
+1. 기획
+
+simple ecommerce baseline
+
+
+2. 설계
+
+frontend
+
+reference: https://www.youtube.com/watch?v=BCkWFblNLKU&ab_channel=LamaDev
+
+
+
+3. 기술선택
+
+
+frontend
+
+use of frontend framework or template engine: frontend framework
+type of frontend: SPA (SPA | SSR)
+
+
+
+4. 구현
+
+1.
+2.
+3.
+
+
+5. 시연
+
+docker compose up -d
+
+
+6. 평가
+
+
+
+
+
