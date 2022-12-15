@@ -85,6 +85,16 @@ simple ecommerce baseline
 
 frontend
 
+1. navbar
+2. footer
+3. slider
+4. product card
+5. product list page
+6. single product page
+7. shopping cart
+8. deploy on docker using nginx
+
+
 reference: https://www.youtube.com/watch?v=BCkWFblNLKU&ab_channel=LamaDev
 
 
@@ -101,9 +111,8 @@ type of frontend: SPA (SPA | SSR)
 
 4. 구현
 
-1.
-2.
-3.
+
+1. navbar
 
 
 5. 시연
