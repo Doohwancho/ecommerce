@@ -23,9 +23,6 @@ e-commerce
 ==========================      Overall     ============================
 ========================================================================
 
----
-Overall
-
 
 1. 기획
 
@@ -126,7 +123,7 @@ type of frontend: SPA (SPA | SSR)
 7. product list page
 8. single product page
 9. shopping cart
-10. local deploy on docker with nginx
+10. local deploy on docker
 
 
 
@@ -141,3 +138,54 @@ type of frontend: SPA (SPA | SSR)
 
 
 9가지 기본 틀 구현 완료
+
+
+
+
+========================================================================
+==========================      Cycle 2     ============================
+========================================================================
+
+
+1. 기획
+
+ecommerce relational database modeling
+
+
+2. 설계
+
+1. define entities
+2. define relations
+3. define keys
+4. normalize && de-normalize
+5. fix details(datatypes, column length, null check)
+
+
+
+3. 기술선택
+
+a. type of database: relational (relational | nosql | key-value | etc)
+b. database: postgres (mysql | oracle | mariadb | postgres | etc)
+c. erd tool: vuerd(VSC extension)
+
+
+4. 구현
+
+
+
+5. 시연
+
+1. install vuerd on VSC marketplace
+2. open ./cycle2.vuerd.json
+
+
+
+6. 평가
+
+1. define entities
+2. define relations
+3. define keys
+4. normalize && de-normalize
+5. fix details(datatypes, column length, null check)
+
+
