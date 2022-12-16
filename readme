@@ -71,6 +71,9 @@ d. monitoring: (uptime-kuma | prometheus + grafana)
 
 
 
+
+
+
 ========================================================================
 ==========================      Cycle 1     ============================
 ========================================================================
@@ -78,7 +81,7 @@ d. monitoring: (uptime-kuma | prometheus + grafana)
 
 1. 기획
 
-simple ecommerce baseline
+simple ecommerce frontend baseline
 
 
 2. 설계
@@ -123,16 +126,18 @@ type of frontend: SPA (SPA | SSR)
 7. product list page
 8. single product page
 9. shopping cart
+10. local deploy on docker with nginx
+
 
 
 5. 시연
 
-docker compose up -d
+1. cd ~/ecommerce/frontend
+2. docker build -t ecommerce-frontend .
+3. docker run --rm -p 3000:3000 ecommerce-front
 
 
 6. 평가
 
 
-
-
-
+9가지 기본 틀 구현 완료
