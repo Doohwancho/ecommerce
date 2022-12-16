@@ -1,7 +1,7 @@
 import React from "react";
+import "./List.scss";
 import Card from "../Card/Card";
-import "./FeaturedProducts.scss";
-// import useFetch from "../../hooks/useFetch";
+//import useFetch from "../../hooks/useFetch";
 
 const data = [
 	{
@@ -42,28 +42,18 @@ const data = [
 	},
 ]
 
-const FeaturedProducts = ({ type }) => {
+const List = ({}) => {
 //   const { data, loading, error } = useFetch(
-//     `/products?populate=*&[filters][type][$eq]=${type}`
+//     `/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
+//       (item) => `&[filters][sub_categories][id][$eq]=${item}`
+//     )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
 //   );
 
   return (
-    <div className="featuredProducts">
-      <div className="top">
-        <h1>{type} products</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas.
-        </p>
-      </div>
-      <div className="bottom">
-        {data?.map((item) => <Card item={item} key={item.id} />)}
-      </div>
+    <div className="list">
+      {data?.map((item) => <Card item={item} key={item.id} />)}
     </div>
   );
 };
 
-export default FeaturedProducts;
+export default List;

@@ -55,8 +55,8 @@ d. erd tool: vuerd
 a. framework: springboot (spring legacy, springboot, nodejs, php, python, etc)
 b. jdk: 11 zulu-community
 c. testing: junit (junit | Spock)
-d. api-document: swagger (swagger, spring-REST-docs)
-e. api-test: restAssured
+d. api-test: restAssured
+e. api-document: swagger (swagger, spring-REST-docs)
 
 
 3-3. frontend
@@ -120,6 +120,9 @@ type of frontend: SPA (SPA | SSR)
 4. product card
 5. categories
 6. contact
+7. product list page
+
+
 
 5. 시연
 
