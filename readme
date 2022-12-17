@@ -132,6 +132,7 @@ type of frontend: SPA (SPA | SSR)
 1. cd ~/ecommerce/frontend
 2. docker build -t ecommerce-frontend .
 3. docker run --rm -p 3000:3000 ecommerce-front
+4. http:localhost:3000/
 
 
 6. 평가
@@ -154,11 +155,12 @@ ecommerce relational database modeling
 
 2. 설계
 
-1. define entities
-2. define relations
+1. define requirements
+2. define entities
 3. define keys
-4. normalize && de-normalize
-5. fix details(datatypes, column length, null check)
+4. define relations(degree of relationship, cardinality)
+5. normalize && de-normalize
+6. fix details(datatypes, column length, null check)
 
 
 
@@ -171,6 +173,7 @@ c. erd tool: vuerd(VSC extension)
 
 4. 구현
 
+1. define requirements
 
 
 5. 시연
@@ -183,9 +186,10 @@ c. erd tool: vuerd(VSC extension)
 6. 평가
 
 1. define entities
-2. define relations
-3. define keys
+2. define keys
+3. define relations(degree of relations, cardinality)
 4. normalize && de-normalize
 5. fix details(datatypes, column length, null check)
+
 
 

@@ -1,0 +1,45 @@
+---
+current
+
+
+1. create accounts
+	- user can create account
+	- user can log in to the website
+2. addresses
+	- user can add one or more addresses to their account
+	- user can set a default shipping address
+3. products
+	- website can store a large number of products
+	- website tracks number of product in stock
+4. categories
+	- each product belongs in a category
+	- categories can belong to other category
+
+
+
+
+
+---
+yet
+
+
+x. review
+	- user can leave reviews for products they have purchased
+	- review includes rating from 1-5
+	- review includes text
+x. shopping cart
+	- visitor can add one or more products to their shopping carts.
+	- shopping carts are not saved in database unless they are logged in.
+x. payment method
+	- user needs to provide their payment details and address details as part of placing an order
+	- payment details
+x. shipping method
+	- user can select a shipping method from a list of methods
+	- each shipping method has a single standard price
+x. order status
+	- the order and shipping process follows stages once the order is placed, such as processing, delivery in progress, and delivered.
+x. promotion
+	- the website allows for promotion
+	- this allows for one or more product categories to have a specific discount on their price
+
+	
