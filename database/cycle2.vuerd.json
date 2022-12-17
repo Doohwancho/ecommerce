@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -147,
-    "scrollLeft": -263,
-    "zoomLevel": 0.9,
+    "scrollTop": -135,
+    "scrollLeft": -394,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -1490,7 +1490,7 @@
           {
             "name": "DESCRIPTION",
             "comment": "",
-            "dataType": "VARCHAR(20)",
+            "dataType": "TEXT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1505,7 +1505,7 @@
               "pfk": false,
               "widthName": 77.62091064453125,
               "widthComment": 60,
-              "widthDataType": 79.25888061523438,
+              "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "cf890ff3-c3e1-4568-ba09-690b93296aab"
@@ -1538,7 +1538,7 @@
           "active": false,
           "left": 1303.4447,
           "top": 332.3347,
-          "zIndex": 1025,
+          "zIndex": 1052,
           "widthName": 60,
           "widthComment": 120,
           "color": "#FFF600"
