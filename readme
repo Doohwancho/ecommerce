@@ -171,9 +171,12 @@ b. database: postgres (mysql | oracle | mariadb | postgres | etc)
 c. erd tool: vuerd(VSC extension)
 
 
+
 4. 구현
 
 1. define requirements
+2. define entities
+
 
 
 5. 시연
