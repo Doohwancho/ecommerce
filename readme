@@ -202,11 +202,11 @@ reference
 6. 평가
 
 
-1. define requirements
-2. define entities
-3. define keys
-4. define relations(degree of relationship, cardinality)
-5. normalize && de-normalize
-6. details(datatypes, column length, null check)
+1. define requirements -- checked
+2. define entities -- checked
+3. define keys -- checked
+4. define relations(degree of relationship, cardinality) -- checked
+5. normalize && de-normalize -- checked
+6. details(datatypes, column length, null check) --checked
 
 

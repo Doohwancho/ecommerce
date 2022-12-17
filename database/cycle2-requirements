@@ -11,10 +11,10 @@ current
 3. products
 	- website can store a large number of products
 	- website tracks number of product in stock
+	- product have images
 4. categories
 	- each product belongs in a category
 	- categories can belong to other category
-
 
 
 
