@@ -177,6 +177,9 @@ c. erd tool: vuerd(VSC extension)
 1. define requirements
 2. define entities
 3. define keys
+4. define relations(degree of relationship, cardinality)
+
+
 
 
 5. 시연
