@@ -160,7 +160,7 @@ ecommerce relational database modeling
 3. define keys
 4. define relations(degree of relationship, cardinality)
 5. normalize && de-normalize
-6. fix details(datatypes, column length, null check)
+6. details(datatypes, column length, null check)
 
 
 
@@ -178,7 +178,17 @@ c. erd tool: vuerd(VSC extension)
 2. define entities
 3. define keys
 4. define relations(degree of relationship, cardinality)
+5. normalize && de-normalize
+6. details(datatypes, column length, null check)
 
+
+
+
+reference
+1. https://www.youtube.com/watch?v=1HamqOuv2Cw&ab_channel=DatabaseStar
+2. https://lannex.github.io/blog/2021/building-a-scalable-e-commerce-data-model/
+3. https://www.postgresql.org/docs/current/datatype.html
+4. https://www.erdcloud.com/d/2mDmcrHWY3CqW4Rrp
 
 
 
@@ -191,11 +201,12 @@ c. erd tool: vuerd(VSC extension)
 
 6. 평가
 
-1. define entities
-2. define keys
-3. define relations(degree of relations, cardinality)
-4. normalize && de-normalize
-5. fix details(datatypes, column length, null check)
 
+1. define requirements
+2. define entities
+3. define keys
+4. define relations(degree of relationship, cardinality)
+5. normalize && de-normalize
+6. details(datatypes, column length, null check)
 
 
