@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -135,
-    "scrollLeft": -394,
-    "zoomLevel": 0.8,
+    "scrollTop": -102,
+    "scrollLeft": -304,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -412,8 +412,8 @@
         "ui": {
           "active": false,
           "left": 203.6658,
-          "top": 280.1113,
-          "zIndex": 1033,
+          "top": 357.8888,
+          "zIndex": 1063,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF6800"
@@ -696,7 +696,7 @@
             "id": "c7182629-d267-4e8d-8c16-0aa8bcff0801"
           },
           {
-            "name": "CATEGORY_CODE",
+            "name": "CODE",
             "comment": "",
             "dataType": "CHAR(5)",
             "default": "",
@@ -711,7 +711,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 98.9149169921875,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
@@ -744,9 +744,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1296.666,
+          "left": 1297.916,
           "top": 104.4443,
-          "zIndex": 1046,
+          "zIndex": 1061,
           "widthName": 62.64494323730469,
           "widthComment": 60,
           "color": "#00F6FF"
@@ -3002,7 +3002,7 @@
             "d63cb190-7899-4cf6-b089-3873e4208d91"
           ],
           "x": 417.5782069213867,
-          "y": 280.1113,
+          "y": 357.8888,
           "direction": "top"
         },
         "end": {
@@ -3053,7 +3053,7 @@
           "columnIds": [
             "49517471-7f7d-4902-8c6b-c1312b68aae4"
           ],
-          "x": 1770.530761352539,
+          "x": 1771.780761352539,
           "y": 104.4443,
           "direction": "top"
         },
@@ -3062,7 +3062,7 @@
           "columnIds": [
             "c7182629-d267-4e8d-8c16-0aa8bcff0801"
           ],
-          "x": 1790.530761352539,
+          "x": 1791.780761352539,
           "y": 124.4443,
           "direction": "right"
         },
@@ -3079,7 +3079,7 @@
           "columnIds": [
             "49517471-7f7d-4902-8c6b-c1312b68aae4"
           ],
-          "x": 1543.5983806762695,
+          "x": 1544.8483806762695,
           "y": 255.4443,
           "direction": "bottom"
         },

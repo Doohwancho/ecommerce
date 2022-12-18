@@ -1,0 +1,20 @@
+---
+frontend page routing
+
+
+
+GET / 								default homepage
+GET /men							products for men
+GET /women							products for women
+GET /children						products for children
+
+
+
+---
+product
+
+
+GET /v1/categories/:categoryId 		query products that belongs to that category
+	? page
+GET /v1/product/:id 				query product that has the id
+

@@ -245,7 +245,7 @@ api-document-tool: swagger (swagger | spring REST docs)
 
 
 1. 표준: RESTful + OpenAPI Specification 3.0 protocol + json
-
+2. RESTful API modeling
 
 
 
@@ -258,7 +258,7 @@ reference
 4. https://github.com/springfox/springfox/tree/master/springfox-data-rest
 5. https://github.com/interagent/http-api-design
 6. https://meetup.toast.com/posts/92
-
+7. https://www.musinsa.com/
 
 
 
