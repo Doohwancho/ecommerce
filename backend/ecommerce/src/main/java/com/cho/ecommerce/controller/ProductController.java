@@ -1,6 +1,8 @@
 package com.cho.ecommerce.controller;
 
 import com.cho.ecommerce.entity.Product;
+import com.cho.ecommerce.errorHandler.exception.InternalServerErrorException;
+import com.cho.ecommerce.errorHandler.exception.NoSuchElementFoundException;
 import com.cho.ecommerce.service.ProductService;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -18,15 +20,8 @@ public class ProductController {
 
     @ApiResponses(
             value = {
-                    @ApiResponse(
-                            code = 400,
-                            message = "unable to complete the request because it was invalid. The request should not be retried without modification."
-                            //, response = MediaDataProductResponseV2.class -> 특정 response class 만들어서 반환도 가능하다.
-                    ),
-                    @ApiResponse(
-                            code = 404,
-                            message = "unable to complete the request because product was not found."
-                    )
+                    @ApiResponse(code = 404, message = "unable to complete the request because product was not found.", response = NoSuchElementFoundException.class), //, response = MediaDataProductResponseV2.class -> 특정 response class 만들어서 반환도 가능하다.
+                    @ApiResponse(code = 500, message = "Internal Server Error", response = InternalServerErrorException.class)
             }
     )
     @GetMapping("/{id}")

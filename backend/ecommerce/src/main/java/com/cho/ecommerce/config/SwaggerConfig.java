@@ -1,6 +1,9 @@
 package com.cho.ecommerce.config;
 
 
+import com.cho.ecommerce.dto.ProductRegisterDto;
+import com.cho.ecommerce.entity.Product;
+import com.fasterxml.classmate.TypeResolver;
 import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,18 +37,13 @@ public class SwaggerConfig implements WebMvcConfigurer {
     private String title = "Ecommerce API " + version;
 
     @Bean
-    public Docket api() {
-        List<ResponseMessage> responseMessages = new ArrayList<ResponseMessage>();
-        responseMessages.add(new ResponseMessageBuilder().code(200).message("OK").build());
-        responseMessages.add(new ResponseMessageBuilder().code(500).message("서버 문제 발생").responseModel(new ModelRef("Error")).build());
-        responseMessages.add(new ResponseMessageBuilder().code(404).message("페이지를 찾을 수 없습니다.").build());
-
+    public Docket api(TypeResolver typeResolver) {
+        
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo()).groupName(version).select()
                 .apis(RequestHandlerSelectors.basePackage("com.cho.ecommerce.controller"))
                 .paths(postPaths()).build()
-                .useDefaultResponseMessages(false) // responseMessages 설정 적용
-                .globalResponseMessage(RequestMethod.GET,responseMessages);
+                .useDefaultResponseMessages(true);
     }
 
     private Predicate<String> postPaths() {
