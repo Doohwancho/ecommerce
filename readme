@@ -230,8 +230,9 @@ ecommerce RESTful api modeling
 1. API 표준 확립
 2. RESTful API modeling
 3. define status codes for error
-4. implement barebone of swagger & swagger parser to OAI
-5. deploy locally on docker
+4. implement barebone of swagger
+5. implement swagger parser for OAI specification
+6. deploy locally on docker
 
 
 3. 기술선택
@@ -247,7 +248,7 @@ api-document-tool: swagger (swagger | spring REST docs)
 1. 표준: RESTful + OpenAPI Specification 3.0 protocol + json
 2. RESTful API modeling
 3. define status codes for error
-
+4. implement barebone of swagger
 
 
 
@@ -267,7 +268,7 @@ reference
 
 1. docker compose up -d
 2. http://localhost:8080/swagger-ui.html
-
+3. GET http://localhost:8080/product/238476234876234  ->  custom 404 error message
 
 
 

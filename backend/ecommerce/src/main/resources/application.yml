@@ -33,3 +33,7 @@ spring:
   web:
     resources:
       add-mappings: false
+
+springfox:
+  documentation:
+    auto-startup: true
