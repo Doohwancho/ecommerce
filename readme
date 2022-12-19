@@ -246,6 +246,7 @@ api-document-tool: swagger (swagger | spring REST docs)
 
 1. 표준: RESTful + OpenAPI Specification 3.0 protocol + json
 2. RESTful API modeling
+3. define status codes for error
 
 
 
