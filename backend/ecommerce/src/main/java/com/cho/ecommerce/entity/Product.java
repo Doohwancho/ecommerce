@@ -1,22 +1,20 @@
 package com.cho.ecommerce.entity;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
-@ApiModel(value = "제품 정보", description = "아이디, 이름")
+@Tag(name = "VO" , description = "Value Object")
+@Schema(name = "Product", description = "아이디, 이름")
 @Entity
 @Getter
-@Setter
 public class Product {
 
-    @ApiModelProperty(value = "아이디", example = "1", required = true)
+    @Schema(description = "id", example = "1") //defaultValue, allowableValues, required, access, readOnly, writeOnly, deprecated, hidden, example, maxLength
     @Id
     private String id;
 
-    @ApiModelProperty(value = "이름", example = "냉장고", required = true)
+    @Schema(description = "이름", example = "냉장고")
     private String name;
 }
