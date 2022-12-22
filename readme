@@ -250,6 +250,7 @@ api-document-tool: swagger (swagger | spring REST docs)
 3. define status codes for error
 4. implement barebone of swagger
 5. implement swagger parser for OAI specification
+6. deploy locally on docker
 
 
 
@@ -276,9 +277,15 @@ OAI
 
 5. 시연
 
+case1) test exception
+
 1. docker compose up -d
 2. http://localhost:8080/swagger-ui.html
 3. GET http://localhost:8080/product/238476234876234  ->  custom 404 error message
+
+
+
+case2) test Open API 3.0
 
 1. run app
 2. http://localhost:8080/v3/api-docs
@@ -293,18 +300,18 @@ OAI
 6. 평가
 
 
-1. usage of protocol
-2. usage of api document tool
-3. accept serialized JSON in request bodies
-4. url endpoints are all lowercase
-5. use nouns instead of verbs in endpoints to express resources
-6. use http methods to express behavior
-7. collections are groups, expressed in plural. document is object, expressed in singular.
-8. use nesting hierarchy on endpoints to show relationships
-9. use snake case for uri
-10. ? works as filter (ex. sort, search, pagination, etc)
-11. use status codes in error handling
-12. use appropriate http response code
+1. usage of protocol  														-- Checked
+2. usage of api document tool												-- Checked
+3. accept serialized JSON in request bodies									-- yet
+4. url endpoints are all lowercase											-- Checked
+5. use nouns instead of verbs in endpoints to express resources				-- Checked
+6. use http methods to express behavior										-- Checked
+7. collections are groups, expressed in plural. document is object, expressed in singular. -- Checked
+8. use nesting hierarchy on endpoints to show relationships 				-- yet
+9. use snake case for uri													-- yet
+10. ? works as filter (ex. sort, search, pagination, etc)					-- yet
+11. use status codes in error handling										-- Checked
+12. use appropriate http response code										-- Checked
 	200 - Ok
 	201 - Created				(리소스 생성 성공. body에 응답 내용이 없을 경우 이용)
 	204 - No Content			(리소스 삭제 성공 등에 주로 사용)
@@ -324,10 +331,10 @@ OAI
 
 	500 - Internal Server Error (서버에서 에러 발생하면 설정되는 기본 상태 코드)
 	503 - Service Unavailable	(외부 서비스가 현재 멈춘 상태이거나 이용할 수 없는 서비스)
-13. be clear with versioning
-14. use '/' only to represent nesting relationships (ex. no / at the end of uri)
-15. '-' can be used for better readability
-16. file extension not on endpoint. instead on accept-header
+13. be clear with versioning												-- Checked
+14. use '/' only to represent nesting relationships (ex. no / at the end of uri)	-- Checked
+15. '-' can be used for better readability									-- yet
+16. file extension not on endpoint. instead on accept-header				-- yet
 
 
 
