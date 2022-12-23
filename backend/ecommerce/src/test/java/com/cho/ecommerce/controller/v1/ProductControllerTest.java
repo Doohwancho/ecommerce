@@ -11,9 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest
@@ -59,40 +62,67 @@ public class ProductControllerTest extends BaseControllerTest {
     @Test
     @DisplayName("상품 정보 업데이트")
     public void testUpdateProduct() {
-        createProduct();
+//        createProduct();
+//
+//        Map<String, Object> product = new HashMap<>();
+//        product.put("name", "updatedTest");
+//        product.put("price", 2000);
+//        product.put("description", "updatedTest");
+//
+//        RestAssured
+//                .given()
+//                    .contentType(ContentType.JSON)
+//                    .accept(ContentType.JSON)
+//                    .body(product)
+//                .when()
+//                    .put("http://localhost:8080/v1/products/1000000", 1)
+//                .then()
+//                    .log().all()
+//                    .statusCode(HttpStatus.OK.value())
+//                    .body("name", equalTo("updatedTest"))
+//                    .body("price", equalTo(2000))
+//                    .body("description", equalTo("updatedTest"));
 
-        Map<String, Object> product = new HashMap<>();
-        product.put("name", "updatedTest");
-        product.put("price", 2000);
-        product.put("description", "updatedTest");
+        ExtractableResponse<Response> create = createProduct();
 
-        RestAssured
-                .given()
-                    .contentType(ContentType.JSON)
-                    .accept(ContentType.JSON)
-                    .body(product)
+        Map<String, Object> params = new HashMap<>();
+        params.put("name", "updatedTest");
+        params.put("price", 2000);
+        params.put("description", "updatedTest");
+
+        ExtractableResponse<Response> updateStudy = RestAssured
+                .given().log().all()
+                .body(params)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .when()
-                    .put("http://localhost:8080/v1/products/1000000", 1)
-                .then()
-                    .log().all()
-                    .statusCode(HttpStatus.OK.value())
-                    .body("name", equalTo("updatedTest"))
-                    .body("price", equalTo(2000))
-                    .body("description", equalTo("updatedTest"));
+                .put(create.header("Location"))
+                .then().log().all()
+                .extract();
+
+        assertThat(updateStudy.statusCode()).isEqualTo(HttpStatus.NO_CONTENT.value());
     }
 
     @Test
     @DisplayName("상품 삭제")
     public void testDeleteProduct() {
-        createProduct();
+//        createProduct();
+//
+//        RestAssured
+//                .given()
+//                .when()
+//                    .delete("http://localhost:8080/v1/products/1000000", 1)
+//                .then()
+//                    .log().all()
+//                    .statusCode(HttpStatus.OK.value());
+        ExtractableResponse<Response> create = createProduct();
 
-        RestAssured
-                .given()
+        ExtractableResponse<Response> deleteProduct = RestAssured
                 .when()
-                    .delete("http://localhost:8080/v1/products/1000000", 1)
-                .then()
-                    .log().all()
-                    .statusCode(HttpStatus.OK.value());
+                    .delete(create.header("Location"))
+                .then().log().all()
+                    .extract();
+
+        assertThat(deleteProduct.statusCode()).isEqualTo(HttpStatus.NO_CONTENT.value());
     }
 
 
