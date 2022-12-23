@@ -1,6 +1,6 @@
 package com.cho.ecommerce.controller.v1;
 
-import com.cho.ecommerce.common.SeparationOfPortToAvoidConflict;
+import com.cho.ecommerce.common.BaseControllerTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ExtractableResponse;
@@ -17,7 +17,7 @@ import java.util.Map;
 import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest
-public class ProductControllerTest extends SeparationOfPortToAvoidConflict {
+public class ProductControllerTest extends BaseControllerTest {
 
     @Test
     @DisplayName("상품 등록")
