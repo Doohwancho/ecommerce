@@ -346,3 +346,63 @@ case2) test Open API 3.0
 	PUT,PATCH,DELETE 요청 시 http header, payload에 힌트 제공하는 방법
 
 
+
+
+
+
+========================================================================
+==========================      Cycle 4     ============================
+========================================================================
+
+
+1. 기획
+
+CRUD /v1/product/:id
+
+
+2. 설계
+
+
+1. restAssured initialize
+2. unit test CRUD /v1/product/:id in BDD style
+3. VO, controller, repository, service layer, image
+
+
+
+3. 기술선택
+
+
+a. testing: junit (junit | Spock)
+b. api-test: restAssured
+c. api-document: swagger (swagger, spring-REST-docs)
+
+
+
+4. 구현
+
+
+1. restAssured initialize
+
+
+
+reference
+1. https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured
+
+5. 시연
+
+
+1. docker compose up -d
+2. http://localhost:8080/swagger-ui.html
+3. test CRUD /v1/product/:id
+4. run test code
+
+
+
+6. 평가
+
+
+1. all CRUD working?
+2. does unit test filter crucial part of input?
+3. appropriate @Valid
+4. BDD style test using restAssured
+

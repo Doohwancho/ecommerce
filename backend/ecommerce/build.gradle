@@ -4,6 +4,7 @@ plugins {
     id 'java'
 }
 
+
 version = '0.0.1'
 sourceCompatibility = '11'
 
@@ -12,6 +13,8 @@ repositories {
 }
 
 dependencies {
+
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.h2database:h2'
@@ -32,9 +35,14 @@ dependencies {
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        exclude group: 'org.codehaus.groovy', module: 'groovy'
     }
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.0.0'
+    testImplementation group: 'io.rest-assured', name: 'json-path', version: '5.0.0'
+    testImplementation group: 'io.rest-assured', name: 'xml-path', version: '5.0.0'
 }
 
 test {
