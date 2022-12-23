@@ -40,7 +40,6 @@ server:
   use-fqn: true
 
 
-
 management:
   endpoints:
     web:

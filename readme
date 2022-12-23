@@ -131,7 +131,7 @@ type of frontend: SPA (SPA | SSR)
 
 1. cd ~/ecommerce/frontend
 2. docker build -t ecommerce-frontend .
-3. docker run --rm -p 3000:3000 ecommerce-front
+3. docker run --rm -dp 3000:3000 ecommerce-front
 4. http:localhost:3000/
 
 
@@ -382,11 +382,17 @@ c. api-document: swagger (swagger, spring-REST-docs)
 
 
 1. restAssured initialize
+2. unit test CRUD /v1/product/:id in BDD style
 
 
 
 reference
 1. https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured
+2. https://github.com/loop-study/REST-Assured/blob/master/build.gradle           -> easy restassured
+
+
+
+
 
 5. 시연
 
