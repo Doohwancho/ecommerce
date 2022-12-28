@@ -22,7 +22,7 @@ spring:
     hibernate:
       ddl-auto: create-drop
   messages:
-    basename: lang/res
+    basename: lang/messages
     encoding: UTF-8
     use-code-as-default-message : true # 메시지를 찾지 못했을 때, 예외 처리 대신 메시지 코드를 그대로 반환
   mvc:
