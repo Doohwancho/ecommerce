@@ -1,4 +1,4 @@
-package com.cho.ecommerce.errorHandler.exception;
+package com.cho.ecommerce.exception;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;

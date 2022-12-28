@@ -1,7 +1,8 @@
-package com.cho.ecommerce.errorHandler;
+package com.cho.ecommerce.exception.handler;
 
-import com.cho.ecommerce.errorHandler.exception.NoSuchCategoryFoundException;
-import com.cho.ecommerce.errorHandler.exception.NoSuchElementFoundException;
+import com.cho.ecommerce.exception.response.ErrorResponse;
+import com.cho.ecommerce.exception.NoSuchCategoryFoundException;
+import com.cho.ecommerce.exception.NoSuchElementFoundException;
 import lombok.extern.slf4j.Slf4j;
 //import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;

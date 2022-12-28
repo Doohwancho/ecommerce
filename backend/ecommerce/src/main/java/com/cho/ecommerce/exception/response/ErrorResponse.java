@@ -1,4 +1,4 @@
-package com.cho.ecommerce.errorHandler;
+package com.cho.ecommerce.exception.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
