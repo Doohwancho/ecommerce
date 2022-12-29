@@ -8,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Tag(name = "VO" , description = "Value Object")
@@ -20,22 +22,22 @@ public class User {
     @Id
     private String id;
 
+    @Schema(description = "이메일", nullable = false, example = "abc@jiniworld.me")
+    @NotBlank(message="EMAIL_IS_MANDATORY") // null, "", " " 모두 허용하지 않습니다.
     @Email
     @Pattern(regexp = ".+@.+\\..+", message = "Please provide a valid email address")
-    @Schema(description = "이메일", nullable = false, example = "abc@jiniworld.me")
     private String email;
 
-    @Pattern(regexp = "[1-2]")
-    @Schema(description = "성별", defaultValue = "1", allowableValues = {"1", "2"})
-    private String sex;
-
+    @NotBlank(message="BIRTHDAY_IS_MANDATORY")
     @DateTimeFormat(pattern = "yyMMdd")
     @Schema(description = "생년월일", example = "yyMMdd", maxLength = 6)
     private String birthDate;
 
     @Schema(description = "전화번호")
+    @NotBlank(message="PHONENUMBER_IS_MANDATORY")
     private String phoneNumber;
 
+    @NotBlank(message="PASSWORD_IS_MANDATORY")
     @Schema(description = "비밀번호")
     private String password;
 }

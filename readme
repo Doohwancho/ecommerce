@@ -67,6 +67,9 @@ c. stress-test: (k6)
 d. monitoring: (uptime-kuma | prometheus + grafana)
 
 
+4. more
+
+1. https://dev.to/techticsolution_5/12-proven-tips-on-improving-your-ecommerce-store-conversion-in-2023-2hj
 
 
 
@@ -365,7 +368,11 @@ CRUD /v1/product/:id
 
 1. restAssured initialize
 2. unit test CRUD /v1/product/:id in BDD style
-3. VO, controller, repository, service layer, image
+3. VO, controller, dto, repository, service layer
+4. test code for controller, service layer
+5. image
+6. category
+7. h2 -> postgres on docker
 
 
 
@@ -383,13 +390,41 @@ c. api-document: swagger (swagger, spring-REST-docs)
 
 1. restAssured initialize
 2. unit test CRUD /v1/product/:id in BDD style
+3. VO, controller, dto, repository, service layer
 
 
 
 reference
-1. https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured
-2. https://github.com/loop-study/REST-Assured/blob/master/build.gradle           -> easy restassured
 
+a. restAssured
+1. docs: https://github.com/rest-assured/rest-assured/wiki/GettingStarted#rest-assured
+2. install : https://github.com/loop-study/REST-Assured/blob/master/build.gradle
+3. fix install : https://nhs0912.tistory.com/76
+
+
+b. ecommerce
+1. steal1 : https://github.com/lmirzaei/spring-ecommerce-tutorial
+2. steal2 : https://github.com/syqu22/spring-boot-shop-sample
+3. steal3 : https://github.com/antkaynak/Keyist-Ecommerce
+4. steal4 : https://github.com/wecode-bootcamp-korea/28-1st-KurlyFlower-backend
+5. steal5 : https://github.com/f-lab-edu/LiveCommerce
+6. steal6 : https://github.com/sosow0212/ShoppingMall-teamA
+
+
+c. test
+1. mock concept : https://www.youtube.com/watch?v=fU7hO-gpYKY&ab_channel=KrisFoster
+2. test : https://github.com/sosow0212/shoppingMall_API_Server
+
+
+
+d. other theme project
+1. steal8 : https://github.com/sosow0212/community
+
+
+
+etc.
+x. divide component: https://github.com/sgs-ncns/NCNS-Server
+x. divide component2 : https://github.com/hometerview/Server
 
 
 

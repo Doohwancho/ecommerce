@@ -8,6 +8,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 import static io.restassured.config.EncoderConfig.encoderConfig;
 
+//use for MockTest
 
 //random ports allows
 //  1. multiple tests to be run concurrently, as each test will use a different port to avoid conflicts.

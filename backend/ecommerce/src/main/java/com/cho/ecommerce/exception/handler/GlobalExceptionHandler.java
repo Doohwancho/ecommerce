@@ -1,10 +1,11 @@
 package com.cho.ecommerce.exception.handler;
 
-import com.cho.ecommerce.exception.response.ErrorResponse;
+import com.cho.ecommerce.exception.BadRequestException;
+import com.cho.ecommerce.exception.DatabaseException;
 import com.cho.ecommerce.exception.NoSuchCategoryFoundException;
 import com.cho.ecommerce.exception.NoSuchElementFoundException;
+import com.cho.ecommerce.exception.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
-//import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -34,6 +35,52 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * user-defined exception handling
      */
 
+    //500 - general internel server exception
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ResponseEntity<Object> handleAllUncaughtException(Exception exception, WebRequest request) {
+        log.error("Unknown error occurred", exception);
+        return buildErrorResponse(exception, "Unknown error occurred", HttpStatus.INTERNAL_SERVER_ERROR, request);
+    }
+
+    //500 - database exception
+    @ExceptionHandler(DatabaseException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ResponseEntity<Object> handleDatabaseException(DatabaseException databaseException, WebRequest request) {
+        log.error("Database Exception Occurred", databaseException);
+        return buildErrorResponse(databaseException, "Database Exception Occurred", HttpStatus.INTERNAL_SERVER_ERROR, request);
+    }
+
+    //404 - no element found
+    @ExceptionHandler(NoSuchElementFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<Object> handleNoSuchElementFoundException(NoSuchElementFoundException itemNotFoundException, WebRequest request) {
+        log.error("Failed to find the requested element", itemNotFoundException);
+        return buildErrorResponse(itemNotFoundException, HttpStatus.NOT_FOUND, request);
+    }
+
+    //404 - no category found
+    @ExceptionHandler(NoSuchCategoryFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<Object> handleNoSuchCategoryFoundException(NoSuchCategoryFoundException categoryNotFoundException, WebRequest request) {
+        log.error("Failed to find the requested category", categoryNotFoundException);
+        return buildErrorResponse(categoryNotFoundException, HttpStatus.NOT_FOUND, request);
+    }
+
+    //400 - bad request
+    @ExceptionHandler(BadRequestException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<Object> handleBadRequestException(BadRequestException badRequestException, WebRequest request) {
+        log.error("Bad Request", badRequestException);
+        return buildErrorResponse(badRequestException, HttpStatus.NOT_FOUND, request);
+    }
+
+
+    /*****************************************************************
+     * helper methods
+     */
+
+
     @Override
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
@@ -47,33 +94,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.unprocessableEntity().body(errorResponse);
     }
 
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity<Object> handleAllUncaughtException(Exception exception, WebRequest request) {
-        log.error("Unknown error occurred", exception);
-        return buildErrorResponse(exception, "Unknown error occurred", HttpStatus.INTERNAL_SERVER_ERROR, request);
-    }
-
-    @ExceptionHandler(NoSuchElementFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleNoSuchElementFoundException(NoSuchElementFoundException itemNotFoundException, WebRequest request) {
-        log.error("Failed to find the requested element", itemNotFoundException);
-        return buildErrorResponse(itemNotFoundException, HttpStatus.NOT_FOUND, request);
-    }
-
-    @ExceptionHandler(NoSuchCategoryFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleNoSuchCategoryFoundException(NoSuchCategoryFoundException categoryNotFoundException, WebRequest request) {
-        log.error("Failed to find the requested category", categoryNotFoundException);
-        return buildErrorResponse(categoryNotFoundException, HttpStatus.NOT_FOUND, request);
-    }
-
-
-
-
-    /*****************************************************************
-     * helper methods
-     */
 
     private ResponseEntity<Object> buildErrorResponse(Exception exception,
                                                       HttpStatus httpStatus,
