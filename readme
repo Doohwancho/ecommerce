@@ -391,7 +391,7 @@ c. api-document: swagger (swagger, spring-REST-docs)
 1. restAssured initialize
 2. unit test CRUD /v1/product/:id in BDD style
 3. VO, controller, dto, repository, service layer
-
+4. test code for controller, service layer
 
 
 reference
@@ -413,7 +413,8 @@ b. ecommerce
 
 c. test
 1. mock concept : https://www.youtube.com/watch?v=fU7hO-gpYKY&ab_channel=KrisFoster
-2. test : https://github.com/sosow0212/shoppingMall_API_Server
+2. mockito : https://github.com/dinesh-varyani/mockito
+3. test : https://github.com/sosow0212/shoppingMall_API_Server
 
 
 
