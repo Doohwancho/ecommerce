@@ -22,14 +22,16 @@ public class ProductService {
 
     @Transactional
     public Product saveProduct(ProductRegisterDto productDto) {
+        //TODO - exception handling of save() in functional style
+//        return repository.save(product).orElseThrow(() -> new DatabaseException(messageUtils.getLocalMessage(I18Constants.NO_ITEM_FOUND.getKey(), product.toString())));
+
+
         Product product = Product.builder()
                 .name(productDto.getName())
                 .description(productDto.getDescription())
                 .sku(productDto.getSku())
                 .build();
 
-        //TODO - exception handling of save() in functional style
-//        return repository.save(product).orElseThrow(() -> new DatabaseException(messageUtils.getLocalMessage(I18Constants.NO_ITEM_FOUND.getKey(), product.toString())));
         return repository.save(product);
     }
 

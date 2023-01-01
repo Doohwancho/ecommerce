@@ -68,10 +68,8 @@ public class ProductServiceTest {
 
         given(productRepository.findById(id)).willReturn(Optional.of(product));
 
-
         // when
         Product result = productService.getProduct(id);
-
 
         // then
         assertThat(product.getName()).isEqualTo(result.getName());
@@ -100,11 +98,14 @@ public class ProductServiceTest {
         when(productRepository.save(any())).thenReturn(product);
 
         //when
-        productService.updateProduct(String.valueOf(id), updatedProduct);
-
+        Product result = productService.updateProduct(String.valueOf(id), updatedProduct);
 
         //then
-        verify(productRepository).save(any()); //TODO - any() 대신 updatedProduct로 변경
+        verify(productRepository).save(any());
+        assertThat(result).isNotNull();
+        assertThat(result.getName()).isEqualTo(updatedProduct.getName());
+        assertThat(result.getDescription()).isEqualTo(updatedProduct.getDescription());
+        assertThat(result.getSku()).isEqualTo(updatedProduct.getSku());
     }
 
 

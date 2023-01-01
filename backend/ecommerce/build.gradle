@@ -41,6 +41,9 @@ dependencies {
     //test
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
+    //mockito
+    testImplementation 'org.mockito:mockito-core:2.+'
+
     //restAssured
     testImplementation 'io.rest-assured:scala-support:5.1.1'
     compileOnly group: 'com.sun.xml.bind', name: 'jaxb-osgi', version: '3.0.0-M5'
