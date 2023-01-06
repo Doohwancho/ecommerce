@@ -241,6 +241,7 @@ ecommerce RESTful api modeling
 
 3. 기술선택
 
+api-protocol: OpenAPI Specification 3.0
 api-document-tool: swagger (swagger | spring REST docs)
 
 
@@ -378,20 +379,16 @@ CRUD /v1/product/:id
 2. unit test CRUD /v1/product/:id in BDD style
 3. VO, controller, dto, repository, service layer
 4. test code for controller, service layer
-5. category (self-referencing over level)
-6. image
-7. h2 -> postgres on docker
-8. connect frontend and backend
-9. refactor folder structure
 
 
 
 3. 기술선택
 
 
-a. testing: junit (junit | Spock)
+a. testing: junit & Mockito (junit & Mockito | Spock)
 b. api-test: restAssured
-c. api-document: swagger (swagger, spring-REST-docs)
+c. api-protocol: OpenAPI 3.0
+d. api-document: swagger (swagger, spring-REST-docs)
 
 
 
@@ -402,7 +399,6 @@ c. api-document: swagger (swagger, spring-REST-docs)
 2. unit test CRUD /v1/product/:id in BDD style
 3. VO, controller, dto, repository, service layer
 4. test code for controller, service layer
-5. category (self-referencing over level)
 
 
 
@@ -429,19 +425,6 @@ c. test
 3. test : https://github.com/sosow0212/shoppingMall_API_Server
 
 
-d. self-referencing category
-1. https://github.com/galid1/JY_Commerce
-
-
-e. other theme project
-1. steal8 : https://github.com/sosow0212/community
-
-
-
-etc.
-x. divide component: https://github.com/sgs-ncns/NCNS-Server
-x. divide component2 : https://github.com/hometerview/Server
-
 
 
 
@@ -450,16 +433,17 @@ x. divide component2 : https://github.com/hometerview/Server
 
 1. docker compose up -d
 2. http://localhost:8080/swagger-ui.html
-3. test CRUD /v1/product/:id
-4. run test code
+3. http://localhost:8080/h2-console
+4. test CRUD /v1/product/:id
+5. run test code
 
 
 
 6. 평가
 
 
-1. all CRUD working?
-2. does unit test filter crucial part of input?
-3. appropriate @Valid
-4. BDD style test using restAssured
+1. all CRUD working?  -- checked
+2. validation check - does unit test filter crucial part of input? -- yet
+3. product controller layer test using restAssured in BDD style -- yet
+4. product service layer test using Mockito in BDD style -- yet
 
