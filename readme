@@ -447,3 +447,55 @@ c. test
 3. product controller layer test using restAssured in BDD style -- yet
 4. product service layer test using Mockito in BDD style -- yet
 
+
+
+
+========================================================================
+==========================      Cycle 5     ============================
+========================================================================
+
+1. 기획(시작시간, 마감시간 포함)
+
+
+feat: category
+
+
+starting date: 230107
+end date:
+
+
+2. 설계
+
+1. 요구사항 분석
+2. adjust API architecture
+3. adjust RDB modeling
+4. VO, DTO, Controller, Service, Repository
+5. query product by its category
+6. test category
+
+
+
+
+3. 기술선택
+
+category method: self-referencing category (depth based | self-referencing category)
+
+no external library needed for category feature. (maybe Redis for Cache)
+
+
+
+4. 구현
+
+
+
+5. 시연
+
+1. docker compose up -d
+2. http://localhost:8080/categories/men
+3. run testcode
+
+
+6. 평가
+
+1. pass all unit test for category
+2. able to query items by its category
