@@ -478,6 +478,7 @@ end date:
 
 3. 기술선택
 
+
 category method: self-referencing category (depth based | self-referencing category)
 
 no external library needed for category feature. (maybe Redis for Cache)
@@ -485,6 +486,11 @@ no external library needed for category feature. (maybe Redis for Cache)
 
 
 4. 구현
+
+
+1. 요구사항 분석
+2. adjust API architecture
+
 
 
 
@@ -495,7 +501,8 @@ no external library needed for category feature. (maybe Redis for Cache)
 3. run testcode
 
 
+
 6. 평가
 
 1. pass all unit test for category
-2. able to query items by its category
+2. test: should query items by its category

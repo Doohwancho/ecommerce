@@ -33,4 +33,77 @@ example)
 
 
 
+---
+C. API architecture
 
+
+- 방법1
+	- /v1/categories/men
+	- /v1/categories/men/shirts
+	- /v1/categories/men/pants
+	- /v1/categories/kids
+	- /v1/categories/kids/shirts
+	- /v1/categories/kids/pants
+- 방법2
+	- /v1/categories/men
+	- /v1/categories/men_shirts
+	- /v1/categories/men_pants
+	- /v1/categories/kids
+	- /v1/categories/kids_shirts
+	- /v1/categories/kids_pants
+- 방법3
+	- /v1/categories/${category_id}
+- 방법4
+	- /v1/${category_name}
+
+
+
+
+---
+D. how do other shoppingmalls do?
+
+
+1. nike -> 방법2 (without version)
+	- https://www.nike.com/kr/women
+	- https://www.nike.com/kr/w/men-tops-tshirts-9om13znik1
+	- https://www.nike.com/kr/w/clearance-jackets-vests-3yaepz50r7y
+
+2. musinsa -> 방법3 (without version)
+	- https://www.musinsa.com/categories/item/001
+	- https://www.musinsa.com/categories/item/001006
+	- https://www.musinsa.com/categories/item/002013
+
+3. adidas -> 방법4 (without version)
+	- https://www.adidas.co.kr/women
+	- https://www.adidas.co.kr/women-t_shirts
+	- https://www.adidas.co.kr/women-shorts
+
+
+
+---
+E. my choice of API URI
+
+
+방법3
+	- /v1/categories/${category_id}
+
+
+
+
+why?
+
+방법1은 uri의 길이가 다른 방법 대비 늘어남.
+게다가 categories + products 조합되는 경우, /v1/categories/men/shirts/sleeves/product/1 
+이런식으로 너무 장황해짐. 대신, 방법3의 
+/v1/categories/men_sleeves/product/1 
+가 더 간단하고 효과적.
+
+
+방법 2는 frontend에서 routing uri로써 적합하지,
+backend api로써는 controller에 ${category_id}를 Long type으로 넘겨줘서
+서비스에서 id로 search하는게 String query보다 더 빠름.
+
+
+방법4는 categories라고 명시가 안되어있기 때문에, 명확하지 않음.
+/products, /review 나 다른 애들도 나중에 추가될텐데,
+일관적인 URI protocol이 필요함.
