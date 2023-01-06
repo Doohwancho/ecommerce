@@ -10,7 +10,7 @@ e-commerce
 2. Define a Cycle
 
 
-1. 기획
+1. 기획(시작시간, 마감시간 포함)
 2. 설계
 3. 기술선택
 4. 구현
@@ -231,11 +231,12 @@ ecommerce RESTful api modeling
 2. 설계
 
 1. API 표준 확립
-2. RESTful API modeling
-3. define status codes for error
-4. implement barebone of swagger
-5. implement swagger parser for OAI specification
-6. deploy locally on docker
+2. RESTful API protocol
+3. RESTful API modeling
+4. define status codes for error
+5. implement barebone of swagger
+6. implement swagger parser for OAI specification
+7. deploy locally on docker
 
 
 3. 기술선택
@@ -249,16 +250,22 @@ api-document-tool: swagger (swagger | spring REST docs)
 
 
 1. 표준: RESTful + OpenAPI Specification 3.0 protocol + json
-2. RESTful API modeling
-3. define status codes for error
-4. implement barebone of swagger
-5. implement swagger parser for OAI specification
-6. deploy locally on docker
+2. RESTful API protocol
+3. RESTful API modeling
+4. define status codes for error
+5. implement barebone of swagger
+6. implement swagger parser for OAI specification
+7. deploy locally on docker
 
 
 
 
 reference
+
+
+RESTful API protocol
+1. https://sharplee7.tistory.com/49
+
 
 api modeling
 1. https://github.com/interagent/http-api-design
@@ -363,6 +370,7 @@ case2) test Open API 3.0
 CRUD /v1/product/:id
 
 
+
 2. 설계
 
 
@@ -370,9 +378,11 @@ CRUD /v1/product/:id
 2. unit test CRUD /v1/product/:id in BDD style
 3. VO, controller, dto, repository, service layer
 4. test code for controller, service layer
-5. image
-6. category
+5. category (self-referencing over level)
+6. image
 7. h2 -> postgres on docker
+8. connect frontend and backend
+9. refactor folder structure
 
 
 
@@ -392,8 +402,7 @@ c. api-document: swagger (swagger, spring-REST-docs)
 2. unit test CRUD /v1/product/:id in BDD style
 3. VO, controller, dto, repository, service layer
 4. test code for controller, service layer
-
-
+5. category (self-referencing over level)
 
 
 
@@ -420,8 +429,11 @@ c. test
 3. test : https://github.com/sosow0212/shoppingMall_API_Server
 
 
+d. self-referencing category
+1. https://github.com/galid1/JY_Commerce
 
-d. other theme project
+
+e. other theme project
 1. steal8 : https://github.com/sosow0212/community
 
 

@@ -1,6 +1,5 @@
----
-frontend page routing
-
+===
+Frontend Page Routing URI
 
 
 GET / 								default homepage
@@ -9,14 +8,54 @@ GET /women							products for women
 GET /children						products for children
 
 
+
+
+
+===
+Backend API URI
+
 ---
-product
+Product
 
 
-GET 	/v1/product/:id 				query product that has the id
-POST 	/v1/product/					save product
-PUT  	/v1/product/:id					update product that has the id
-DELETE 	/v1/product/:id					delete product that has the id
+GET 	/v1/products/:id 					query product that has the id
+POST 	/v1/products/						save product
+PUT  	/v1/products/:id					update product that has the id
+DELETE 	/v1/products/:id					delete product that has the id
 
-GET 	/v1/categories/:categoryId 		query products that belongs to that category
+
+
+---
+Category
+
+
+GET 	/v1/categories/:category_id 			query products that belongs to that category's branch
 		option: ? page
+
+
+
+
+
+
+example)
+{
+  "ROOT": {
+        "categoryId": 1,
+        "branch": "coupang",
+        "code": "ROOT",
+        "name": "ROOT",
+        "parentCategoryName": "대분류",
+        "level": 0,
+        "children": {
+            "1": {
+                "categoryId": 2,
+                "branch": "coupang",
+                "code": "1",
+                "name": "clothes",
+                "parentCategoryName": "ROOT",
+                "level": 1,
+                "children": {}
+            }
+        }
+    }
+  }
