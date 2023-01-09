@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -117,
-    "scrollLeft": -666,
+    "scrollTop": -88,
+    "scrollLeft": -500,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -717,36 +717,13 @@
               "widthDefault": 60
             },
             "id": "8d38c930-42d6-45e9-b046-72eca3e91995"
-          },
-          {
-            "name": "DEPTH",
-            "comment": "",
-            "dataType": "SMALLINT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "6f0541b8-745a-4865-ad26-4c8998e4bc31"
           }
         ],
         "ui": {
           "active": false,
           "left": 1138.066,
           "top": 51.9943,
-          "zIndex": 245,
+          "zIndex": 249,
           "widthName": 62.64494323730469,
           "widthComment": 60,
           "color": "#00F6FF"
@@ -1380,7 +1357,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 1121.9432,
           "top": 271.8588,
           "zIndex": 246,
@@ -3212,7 +3189,7 @@
             "49517471-7f7d-4902-8c6b-c1312b68aae4"
           ],
           "x": 1384.9983806762696,
-          "y": 202.9943,
+          "y": 182.4943,
           "direction": "bottom"
         },
         "end": {

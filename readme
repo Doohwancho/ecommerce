@@ -464,14 +464,17 @@ starting date: 230107
 end date:
 
 
+
 2. 설계
+
 
 1. 요구사항 분석
 2. adjust API architecture
-3. adjust RDB modeling
-4. VO, DTO, Controller, Service, Repository
-5. query product by its category
-6. test category
+3. determine types of category and how I would implement it
+4. adjust RDB modeling
+5. VO, DTO, Controller, Service, Repository
+6. query product by its category
+7. test category
 
 
 
@@ -490,7 +493,8 @@ no external library needed for category feature. (maybe Redis for Cache)
 
 1. 요구사항 분석
 2. adjust API architecture
-
+3. determine types of category and how I would implement it
+4. adjust RDB modeling
 
 
 
