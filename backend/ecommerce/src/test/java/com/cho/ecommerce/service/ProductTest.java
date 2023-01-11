@@ -2,6 +2,7 @@ package com.cho.ecommerce.service;
 
 import com.cho.ecommerce.dto.product.ProductRegisterDTO;
 import com.cho.ecommerce.dto.product.ProductUpdateDTO;
+import com.cho.ecommerce.entity.Category;
 import com.cho.ecommerce.entity.Product;
 import com.cho.ecommerce.repository.ProductRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -40,10 +41,19 @@ public class ProductTest {
     @DisplayName("상품 생성")
     public void shouldCreateProduct() {
         // given
+        Category category = new Category().builder()
+                .id(1L)
+                .parentId(0L)
+                .name("men")
+                .build();
+
         ProductRegisterDTO productRegisterDto = ProductRegisterDTO.builder()
                 .name("product name")
                 .description("product description")
                 .sku("product sku")
+                .category(category)
+                .price(10000)
+                .quantity_in_stock(100)
                 .build();
 
         // when

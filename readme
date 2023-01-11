@@ -472,7 +472,7 @@ end date:
 2. adjust API architecture
 3. determine types of category and how I would implement it
 4. adjust RDB modeling
-5. VO, DTO, Controller, Service, Repository
+5. save product with its category
 6. query product by its category
 7. test category
 
@@ -495,7 +495,11 @@ no external library needed for category feature. (maybe Redis for Cache)
 2. adjust API architecture
 3. determine types of category and how I would implement it
 4. adjust RDB modeling
+5. feat: save product with its category
 
+
+
+reference: https://github.com/syqu22/spring-boot-shop-sample
 
 
 5. 시연

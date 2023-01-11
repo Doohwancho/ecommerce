@@ -2,24 +2,24 @@
 -- 보통 schema.sql은 DDL 스크립트를 명시해두고, 데이터를 위한 DML문은 data.sql 파일로 작성해두면 역시 자동으로 실행한다.
 
 -- ================ Root 카테고리
-insert into category(name, parent_id) values ('women', 0);
 insert into category(name, parent_id) values ('men', 0);
+insert into category(name, parent_id) values ('women', 0);
 insert into category(name, parent_id) values ('kids', 0);
 
 
 -- =============== Level 1 카테고리
 --
-insert into category(name, parent_id) values ('hat', 1l);
-insert into category(name, parent_id) values ('shirts', 1l);
-insert into category(name, parent_id) values ('pants', 1l);
+insert into category(name, parent_id) values ('men_hat', 1l);
+insert into category(name, parent_id) values ('men_shirts', 1l);
+insert into category(name, parent_id) values ('men_pants', 1l);
 
-insert into category(name, parent_id) values ('hat', 2l);
-insert into category(name, parent_id) values ('shirts', 2l);
-insert into category(name, parent_id) values ('pants', 2l);
+insert into category(name, parent_id) values ('women_hat', 2l);
+insert into category(name, parent_id) values ('women_shirts', 2l);
+insert into category(name, parent_id) values ('women_pants', 2l);
 
-insert into category(name, parent_id) values ('hat', 3l);
-insert into category(name, parent_id) values ('shirts', 3l);
-insert into category(name, parent_id) values ('pants', 3l);
+insert into category(name, parent_id) values ('kids_hat', 3l);
+insert into category(name, parent_id) values ('kids_shirts', 3l);
+insert into category(name, parent_id) values ('kids_pants', 3l);
 
 ---- 가전
 --insert into category(name, parent_id) values ('컴퓨터', 2l);
