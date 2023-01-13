@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -62,7 +63,7 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-//    public List<Product> findAllByCategoryId(long id) {
-//        return productRepository.findAllByCategoryId(id);
-//    }
+    public List<Product> findAllByCategoryId(long id) {
+        return productRepository.findAllByCategoryId(id);
+    }
 }

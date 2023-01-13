@@ -17,6 +17,7 @@ import javax.validation.constraints.Min;
 @Setter //TODO - updateProduct 때문에 차용했지만, DTO를 사용했기 때문에 빼기
 @NoArgsConstructor
 @AllArgsConstructor
+//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Product extends BaseEntity{
 
     @Schema(description = "id", example = "1") //defaultValue, allowableValues, required, access, readOnly, writeOnly, deprecated, hidden, example, maxLength
