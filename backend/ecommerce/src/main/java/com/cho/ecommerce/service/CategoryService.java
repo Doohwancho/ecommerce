@@ -56,7 +56,7 @@ public class CategoryService {
             });
     }
 
-    private Category findCategory (Long id) {
+    public Category findCategory (Long id) {
         return categoryRepository.findById(id).orElseThrow(() -> new NoSuchCategoryFoundException(messageUtils.getLocalMessage(I18Constants.NO_CATEGORY_FOUND.getKey(), id)));
     }
 

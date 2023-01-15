@@ -29,8 +29,9 @@ DELETE 	/v1/products/:id					delete product that has the id
 Category
 
 
-GET 	/v1/categories/:category_id 			query products that belongs to that category's branch
+GET 	/v1/categories/:category_id/products 		query products that belongs to certain category
 		option: ? (pagination | filter | sort | search)
-POST	/v1/categories							save category
-PUT		/v1/categories/:category_id				update category by its id
-DELETE	/v1/categories/:category_id				delete category by its id
+GET 	/v1/categories/:category_id					get category by its id
+POST	/v1/categories								save category
+PUT		/v1/categories/:category_id					update category by its id
+DELETE	/v1/categories/:category_id					delete category by its id

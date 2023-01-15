@@ -41,9 +41,19 @@ public class CategoryController {
             @ApiResponse(responseCode = "404", description = "unable to complete the request because product was not found.", content = @Content(schema = @Schema(implementation = NoSuchElementFoundException.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = InternalServerErrorException.class), mediaType = MediaType.APPLICATION_JSON_VALUE))
     })
-    @GetMapping("/{categoryId}")
+    @GetMapping("/{categoryId}/products")
     public List<Product> getProductsByItsCategory(@Parameter(name = "categoryId", description = "category id", in = ParameterIn.PATH) @PathVariable Long categoryId) {
         return productService.findAllByCategoryId(categoryId);
+    }
+
+    @Operation(summary="get category by its id", responses = {
+            @ApiResponse(responseCode = "200", description = "OK.", content = @Content(schema = @Schema(type = "array", implementation = Product.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
+            @ApiResponse(responseCode = "404", description = "unable to complete the request because product was not found.", content = @Content(schema = @Schema(implementation = NoSuchCategoryFoundException.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = InternalServerErrorException.class), mediaType = MediaType.APPLICATION_JSON_VALUE))
+    })
+    @GetMapping("/{categoryId}")
+    public Category getCategory(@Parameter(name = "categoryId", description = "category id", in = ParameterIn.PATH) @PathVariable Long categoryId) {
+        return categoryService.findCategory(categoryId);
     }
 
     @Operation(summary="save category", responses = {

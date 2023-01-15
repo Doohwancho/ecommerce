@@ -526,12 +526,12 @@ reference: https://github.com/syqu22/spring-boot-shop-sample
 5. 시연
 
 1. docker compose up -d
-2. http://localhost:8080/categories/men
+2. http://localhost:8080/v1/categories/0
 3. run testcode
 
 
 
 6. 평가
 
-1. pass all unit test for category
+1. feat: CRUD category
 2. test: should query items by its category
