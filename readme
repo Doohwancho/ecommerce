@@ -18,6 +18,22 @@ e-commerce
 6. 평가
 
 
+---
+3. Features
+
+
+1. product
+	- get product by id
+	- save product
+	- update product by id
+	- delete product by id
+
+2. category
+	- get all products that belongs to certain category id
+	- save category by name
+	- update category by id
+	- delete category by id
+
 
 ========================================================================
 ==========================      Overall     ============================
@@ -474,7 +490,8 @@ end date:
 4. adjust RDB modeling
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
-7. feat: CRUD category list
+7. feat: query all categories and put them in tree
+8. feat: CRUD category list
 
 
 
@@ -497,7 +514,7 @@ no external library needed for category feature. (maybe Redis for Cache)
 4. adjust RDB modeling
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
-7. feat: CRUD category list
+7. feat: query all categories and put them in tree
 
 
 
