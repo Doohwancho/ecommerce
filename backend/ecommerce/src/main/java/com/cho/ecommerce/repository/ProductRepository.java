@@ -12,5 +12,5 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 //    Optional<Product> save(Product product);
     Optional<Product> findById(long id);
     //TODO - delete vs deleteById -> deleteById is more efficient
-    List<Product> findAllByCategoryId(long id);
+    Optional<List<Product>> findAllByCategoryId(long id);
 }

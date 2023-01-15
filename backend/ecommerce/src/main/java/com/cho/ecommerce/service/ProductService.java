@@ -3,6 +3,7 @@ package com.cho.ecommerce.service;
 import com.cho.ecommerce.dto.product.ProductRegisterDTO;
 import com.cho.ecommerce.dto.product.ProductUpdateDTO;
 import com.cho.ecommerce.entity.Product;
+import com.cho.ecommerce.exception.NoSuchCategoryFoundException;
 import com.cho.ecommerce.exception.NoSuchElementFoundException;
 import com.cho.ecommerce.exception.i18n.I18Constants;
 import com.cho.ecommerce.repository.CategoryRepository;
@@ -25,19 +26,7 @@ public class ProductService {
 
     @Transactional
     public Product saveProduct(ProductRegisterDTO productDto) {
-        //TODO - exception handling of save() in functional style
-//        return repository.save(product).orElseThrow(() -> new DatabaseException(messageUtils.getLocalMessage(I18Constants.NO_ITEM_FOUND.getKey(), product.toString())));
-
-        Product product = Product.builder()
-                .name(productDto.getName())
-                .description(productDto.getDescription())
-                .sku(productDto.getSku())
-                .category(productDto.getCategory())
-                .price(productDto.getPrice())
-                .quantity_in_stock(productDto.getQuantity_in_stock())
-                .build();
-
-        return productRepository.save(product);
+        return productRepository.save(productDto.toEntity());
     }
 
     public Product getProduct(long id) {
@@ -64,6 +53,6 @@ public class ProductService {
     }
 
     public List<Product> findAllByCategoryId(long id) {
-        return productRepository.findAllByCategoryId(id);
+        return productRepository.findAllByCategoryId(id).orElseThrow(() -> new NoSuchCategoryFoundException(messageUtils.getLocalMessage(I18Constants.NO_CATEGORY_FOUND.getKey(), id)));
     }
 }

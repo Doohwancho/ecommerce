@@ -474,6 +474,7 @@ end date:
 4. adjust RDB modeling
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
+7. feat: CRUD category list
 
 
 
@@ -496,6 +497,7 @@ no external library needed for category feature. (maybe Redis for Cache)
 4. adjust RDB modeling
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
+7. feat: CRUD category list
 
 
 
