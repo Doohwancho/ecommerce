@@ -29,6 +29,7 @@ e-commerce
 	- delete product by id
 
 2. category
+	- get all sub-categories of root category in tree
 	- get all products that belongs to certain category id
 	- save category by name
 	- update category by id
@@ -491,7 +492,7 @@ end date:
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
 7. feat: query all categories and put them in tree
-8. feat: CRUD category list
+8. feat: CRUD category
 
 
 
@@ -515,6 +516,7 @@ no external library needed for category feature. (maybe Redis for Cache)
 5. feat: save product with its category
 6. feat: query all products that belongs to certain category
 7. feat: query all categories and put them in tree
+8. feat: CRUD category
 
 
 

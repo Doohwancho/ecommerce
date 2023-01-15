@@ -17,7 +17,6 @@ import javax.validation.constraints.Min;
 @Setter //TODO - updateProduct 때문에 차용했지만, DTO를 사용했기 때문에 빼기
 @NoArgsConstructor
 @AllArgsConstructor
-//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Product extends BaseEntity{
 
     @Schema(description = "id", example = "1") //defaultValue, allowableValues, required, access, readOnly, writeOnly, deprecated, hidden, example, maxLength
@@ -38,7 +37,7 @@ public class Product extends BaseEntity{
     @Schema(description = "재고수량", example = "1")
     @Column(name = "QUANTITY_IN_STOCK", nullable = false)
     @Min(0)
-    private int quantity_in_stock;
+    private int quantityInStock;
 
     @Schema(description = "가격", example = "10000")
     @Column(name = "PRICE", nullable = false)
@@ -50,4 +49,5 @@ public class Product extends BaseEntity{
     @JoinColumn(name = "category_id", nullable = false) //foreign key named "category_id". should be lowercase
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Category category;
+
 }

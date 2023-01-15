@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, String> {
-//    Optional<Product> save(Product product);
     Optional<Product> findById(long id);
     //TODO - delete vs deleteById -> deleteById is more efficient
     Optional<List<Product>> findAllByCategoryId(long id);

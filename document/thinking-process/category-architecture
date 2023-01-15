@@ -475,6 +475,15 @@ view에 catalog.html을 보면, 딱히 root category node 안쓰는데?
 1. client가 /men을 클릭함
 2. client -> server로 GET 	/v1/categories/${category_id_for_men} 요청함
 
+
+
+
+
+---
+I. from client perspective regarding category
+
+
+
 Q. 근데 category_name이 아니라, category_id로 요청하려면, client가 카테고리 종목별로 카테고리 아이디를 알아야 되잖아?
 	- dotFile같은 걸로 처리해야하나? 근데 카테고리별 아이디를 클라이언트로 노출시키는게 별로지 않나?
 	- 그렇다고 /v1/categories/${category_name} 해 버리면, db query 시에 String으로 찾는데, 이거 long type id로 찾는 것 보다 느리지 않나?
@@ -531,6 +540,25 @@ public String home(Model model){
 
 
 
+아니다 이 악마야
+
+카테고리를 application.yml에 하드코딩하던,
+프론트에 dot_file에 하드코딩하던,
+나중에 사이트 운영자가 새로운 카테고리 만들고 싶을 때 마다, 개발자 불러야되잖아?
+
+카테고리가 저장된걸 getAll()해서 root node를 기준으로 tree형식으로 만들어서 캐시해준 다음,
+페이지 접속할 때마다 GET /v1/categories/0  으로 요청 보내서 root node(id=0)를 뿌려야 겠다.
+
+tree에 첫번째 level은 사이트 상단 메인 메뉴에 뜨는 카테고리로 하고,
+두번째 레벨부터 사이트 왼쪽 사이드바에 뜨도록 해야겠네.
 
 
-reference: https://github.com/galid1/JY_Commerce
+admin 페이지에서 카테고리 생성, 삭제, 변경 등 해줘야 하니까, CRUD도 만들어야겠다.
+
+
+
+
+---
+reference
+
+1. https://github.com/galid1/JY_Commerce

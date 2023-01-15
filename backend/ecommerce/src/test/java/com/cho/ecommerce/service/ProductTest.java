@@ -53,7 +53,7 @@ public class ProductTest {
                 .sku("product sku")
                 .category(category)
                 .price(10000)
-                .quantity_in_stock(100)
+                .quantityInStock(100)
                 .build();
 
         // when

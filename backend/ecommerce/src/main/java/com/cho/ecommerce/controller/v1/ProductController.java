@@ -26,7 +26,7 @@ import javax.validation.Valid;
 @Tag(name = "상품", description = "product API")
 @Slf4j(topic = "PRODUCT_CONTROLLER")
 @RestController
-@RequestMapping("/v1/product")
+@RequestMapping("/v1/products")
 @AllArgsConstructor
 public class ProductController {
 
@@ -53,7 +53,7 @@ public class ProductController {
     @ResponseStatus(HttpStatus.CREATED)
     public Product registerProduct(@Parameter(
             name = "product",
-            description = "product object",
+            description = "product DTO for register",
             required = true,
             schema = @Schema(implementation = ProductRegisterDTO.class, example =
                     "{\n" +
@@ -73,6 +73,7 @@ public class ProductController {
         return productService.saveProduct(product);
     }
 
+    //TODO - update product with price, quantity, category
     @Operation(summary="update an existing product by its id", responses = {
             @ApiResponse(responseCode = "200", description = "OK.", content = @Content(schema = @Schema(implementation = Product.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(responseCode = "400", description = "unable to complete the request because bad request.", content = @Content(schema = @Schema(implementation = BadRequestException.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
@@ -80,7 +81,21 @@ public class ProductController {
             @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = InternalServerErrorException.class), mediaType = MediaType.APPLICATION_JSON_VALUE))
     })
     @PutMapping("/{id}")
-    public Product updateProduct(@Parameter(name = "id", description = "user id", in = ParameterIn.PATH) @PathVariable String id, @Valid @RequestBody ProductUpdateDTO product){
+    public Product updateProduct(
+            @Parameter(name = "id", description = "user id", in = ParameterIn.PATH) @PathVariable String id,
+            @Parameter(
+                    name = "product",
+                    description = "product DTO for update",
+                    required = true,
+                    schema = @Schema(implementation = ProductUpdateDTO.class, example =
+                            "{\n" +
+                                    "\"name\": \"product1\",\n" +
+                                    "\"description\": \"product1 description\",\n" +
+                                    "\"sku\": \"product1 sku\",\n" +
+                                    "}"
+                    )
+            )
+            @Valid @RequestBody ProductUpdateDTO product){
         return productService.updateProduct(id, product);
     }
 
@@ -93,14 +108,4 @@ public class ProductController {
     public void deleteProduct(@Parameter(name = "id", description = "user id", in = ParameterIn.PATH) @PathVariable String id){
         productService.deleteProduct(id);
     }
-
-//    @Operation(summary="get products by its category", responses = {
-//            @ApiResponse(responseCode = "200", description = "OK.", content = @Content(schema = @Schema(implementation = Product.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
-//            @ApiResponse(responseCode = "404", description = "unable to complete the request because product was not found.", content = @Content(schema = @Schema(implementation = NoSuchElementFoundException.class), mediaType = MediaType.APPLICATION_JSON_VALUE)),
-//            @ApiResponse(responseCode = "500", description = "Internal Server Error", content = @Content(schema = @Schema(implementation = InternalServerErrorException.class), mediaType = MediaType.APPLICATION_JSON_VALUE))
-//    })
-//    @GetMapping("/{categoryId}")
-//    public List<Product> getProductsByItsCategory(@Parameter(name = "categoryId", description = "category id", in = ParameterIn.PATH) @PathVariable Long categoryId) {
-//        return productService.findAllByCategoryId(categoryId);
-//    }
 }

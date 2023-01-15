@@ -37,7 +37,7 @@ spring:
 #      none: 사용하지 않음(사실상 없는 값이지만 관례상 none이라고 한다.)
 
 #      주의할 점
-#      운영 장비에서는 절대 crate, create-drop, update 절대 사용하면 안된다.
+#      운영 장비에서는 절대 crate, create-drop, update 절대 사용하면 안된다. (ex. update -> entity length를 10->20 변경하면 기존 테이블 + 그 안 데이터 다날아가고 새로 생성됨)
 #      개발 초기 단계는 create 또는 update
 #      테스트 서버는 update 또는 validate
 #      스테이징과 운영 서버는 validate 또는 none
@@ -45,6 +45,9 @@ spring:
     properties:
       hibernate:
         format_sql: true #sql을 읽기 현판 포멧으로 출력
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
   messages:
     basename: messages
     encoding: UTF-8

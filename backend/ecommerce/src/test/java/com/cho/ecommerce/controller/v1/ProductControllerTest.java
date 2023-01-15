@@ -37,7 +37,7 @@ public class ProductControllerTest {
                 .description("test")
                 .sku("test")
                 .price(10000)
-                .quantity_in_stock(100)
+                .quantityInStock(100)
                 .category(category)
                 .build();
 
@@ -77,7 +77,7 @@ public class ProductControllerTest {
                 .description("check-here")
                 .sku("test")
                 .price(10000)
-                .quantity_in_stock(100)
+                .quantityInStock(100)
                 .category(category)
                 .build();
         Product product2 = new Product().builder()
@@ -85,7 +85,7 @@ public class ProductControllerTest {
                 .description("check-here")
                 .sku("test")
                 .price(10000)
-                .quantity_in_stock(100)
+                .quantityInStock(100)
                 .category(category)
                 .build();
 

@@ -6,7 +6,6 @@ import com.cho.ecommerce.entity.Product;
 import com.cho.ecommerce.exception.NoSuchCategoryFoundException;
 import com.cho.ecommerce.exception.NoSuchElementFoundException;
 import com.cho.ecommerce.exception.i18n.I18Constants;
-import com.cho.ecommerce.repository.CategoryRepository;
 import com.cho.ecommerce.repository.ProductRepository;
 import com.cho.ecommerce.utils.MessageUtils;
 import lombok.AllArgsConstructor;
@@ -21,7 +20,6 @@ import java.util.List;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final CategoryRepository categoryRepository;
     private final MessageUtils messageUtils;
 
     @Transactional

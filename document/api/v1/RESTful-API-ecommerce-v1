@@ -31,3 +31,6 @@ Category
 
 GET 	/v1/categories/:category_id 			query products that belongs to that category's branch
 		option: ? (pagination | filter | sort | search)
+POST	/v1/categories							save category
+PUT		/v1/categories/:category_id				update category by its id
+DELETE	/v1/categories/:category_id				delete category by its id

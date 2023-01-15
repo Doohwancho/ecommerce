@@ -7,24 +7,24 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
-import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 
 @Tag(name = "DTO" , description = "Data Transfer Object")
 @Schema(name = "제품 업데이트 객체", description = "제품 업데이트시 사용")
 @Getter
 @Setter //TODO - setter랑 builder중 setter 제거
 @Builder
-public class ProductUpdateDto {
+public class ProductUpdateDTO {
 
     @NonNull
-    @Max(20)
+    @Size(max=20)
     private String name;
 
     @NonNull
-    @Max(500)
+    @Size(max=500)
     private String description;
 
     @NonNull
-    @Max(20)
+    @Size(max=20)
     private String sku;
 }

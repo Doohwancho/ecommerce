@@ -1,6 +1,6 @@
 package com.cho.ecommerce.service;
 
-import com.cho.ecommerce.dto.category.CategoryDTO;
+import com.cho.ecommerce.dto.category.CategoryGetRootDTO;
 import com.cho.ecommerce.entity.Category;
 import com.cho.ecommerce.repository.CategoryRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -40,7 +40,7 @@ public class CategoryTest {
                 .willReturn(categoryEntities);
 
         //when
-        CategoryDTO categoryRoot = categoryService.createCategoryRoot();
+        CategoryGetRootDTO categoryRoot = categoryService.createCategoryRoot();
 
         //then
         verify(categoryRepository, atLeastOnce()).findAll();

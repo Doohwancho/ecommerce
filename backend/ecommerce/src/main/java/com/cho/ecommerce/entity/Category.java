@@ -2,10 +2,7 @@ package com.cho.ecommerce.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -17,7 +14,7 @@ import java.util.Set;
 @Tag(name = "VO" , description = "Value Object")
 @Schema(name = "CATEGORY", description = "카테고리")
 @Getter
-//@Setter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -51,5 +48,12 @@ public class Category {
     public Category(String name, Long parentId) {
         this.name = name;
         this.parentId = parentId;
+    }
+
+    public Category toEntity() {
+        return Category.builder()
+                .name(name)
+                .parentId(parentId)
+                .build();
     }
 }
