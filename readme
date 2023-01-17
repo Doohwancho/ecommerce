@@ -492,7 +492,7 @@ feat: category
 
 
 starting date: 230107
-end date:
+end date: 230117
 
 
 
@@ -554,3 +554,55 @@ reference: https://github.com/syqu22/spring-boot-shop-sample
 3. feat: should query all categories in tree, cached for frequent resuability
 
 
+
+
+========================================================================
+==========================      Cycle 6     ============================
+========================================================================
+
+1. 기획(시작시간, 마감시간 포함)
+
+integrate frontend and backend
+
+
+
+
+2. 설계
+
+
+1. integrate mysql(test code for connection included)
+2. eslint(airbnb style), vite, jest setting
+3. js -> ts
+4. frontend -> backend 붙이기
+
+
+
+
+3. 기술선택
+
+
+1. mysql이 친숙하니, 일단 도입 후, 어느정도 튜닝이 감을 잡은 후, postgres로 migration
+2. js->ts conversion for type safety, reliability purpose
+3. eslint(airbnb style) for consistent frontend code convension
+4. vite for faster build
+
+
+4. 구현
+
+
+
+5. 시연
+
+
+1. docker compose up -d --build
+2. run test
+
+
+
+6. 평가
+
+
+1. check all .jsx converted to .tsx
+2. no eslint error
+3. run test code for mysql connection
+4. check api calls from frontend are received and handled without error on backend
