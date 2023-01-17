@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
 
 
 @Tag(name = "DTO" , description = "Data Transfer Object")
-@Schema(name = "제품 등록 객체", description = "제품 등록시 사용")
+@Schema(name = "2. Product Register DTO", description = "제품 등록시 사용")
 @Getter
 @Builder
 @NoArgsConstructor

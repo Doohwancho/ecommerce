@@ -13,10 +13,8 @@ import org.springframework.test.util.ReflectionTestUtils;
 import javax.transaction.Transactional;
 import java.util.List;
 
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;

@@ -86,9 +86,11 @@ springdoc:
     show-common-extensions: true
     display-request-duration: true
     groups-order: DESC
-    operationsSorter: method
     disable-swagger-default-url: true
     use-root-path: true
+    operationsSorter: method # sort @Schema properties by keys, alphabetical order, method
+    tagsSorter: alpha # sort @Schema properties by keys, alphabetical order
+  writer-with-order-by-keys: true # sort @Schema properties by keys, alphabetical order
   show-actuator: false
   paths-to-match:
     - /v1/**

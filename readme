@@ -19,7 +19,19 @@ e-commerce
 
 
 ---
-3. Features
+3. Principle
+
+
+1. goal driven
+2. divide and conquer
+3. 70% what I already knew + 30% what I previously did not know
+4. think first and then write code
+5. there should be specific criteria which is quantifiable in number for performance analysis
+
+
+
+---
+4. Features
 
 
 1. product
@@ -31,9 +43,11 @@ e-commerce
 2. category
 	- get all sub-categories of root category in tree
 	- get all products that belongs to certain category id
+	- get category by id
 	- save category by name
 	- update category by id
 	- delete category by id
+
 
 
 ========================================================================
@@ -523,15 +537,20 @@ no external library needed for category feature. (maybe Redis for Cache)
 reference: https://github.com/syqu22/spring-boot-shop-sample
 
 
+
 5. 시연
 
-1. docker compose up -d
-2. http://localhost:8080/v1/categories/0
-3. run testcode
+1. docker compose up -d --build
+2. http://localhost:8080/swagger-ui/index.html
+3. GET http://localhost:8080/v1/categories/0
+4. run testand pass
 
 
 
 6. 평가
 
 1. feat: CRUD category
-2. test: should query items by its category
+2. feat: should query items by its category
+3. feat: should query all categories in tree, cached for frequent resuability
+
+

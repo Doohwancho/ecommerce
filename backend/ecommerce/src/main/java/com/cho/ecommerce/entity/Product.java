@@ -10,7 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 
 @Tag(name = "VO" , description = "Value Object")
-@Schema(name = "PRODUCT", description = "제품 정보")
+@Schema(name = "1. PRODUCT VO", description = "제품 정보")
 @Entity
 @Builder
 @Getter

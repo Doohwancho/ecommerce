@@ -122,7 +122,7 @@ public class ProductControllerTest {
                     .accept(ContentType.JSON)
                     .body(productJson1)
                 .when()
-                    .get("/v1/categories/"+categoryId)
+                    .get("/v1/categories/"+categoryId+"/products")
                 .then()
                 .log().all()
                 .statusCode(HttpStatus.OK.value())

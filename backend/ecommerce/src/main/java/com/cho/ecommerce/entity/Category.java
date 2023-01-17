@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Tag(name = "VO" , description = "Value Object")
-@Schema(name = "CATEGORY", description = "카테고리")
+@Schema(name = "1. CATEGORY VO", description = "카테고리")
 @Getter
 @Setter
 @Builder

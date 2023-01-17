@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Tag(name = "DTO" , description = "Data Transfer Object")
-@Schema(name = "카테고리 업데이트 객체", description = "카테고리 업데이트시 사용")
+@Schema(name = "2. Category Update DTO", description = "카테고리 업데이트시 사용")
 @Getter
 public class CategoryUpdateDTO {
 

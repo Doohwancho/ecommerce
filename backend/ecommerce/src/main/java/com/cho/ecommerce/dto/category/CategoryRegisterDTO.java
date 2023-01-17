@@ -12,7 +12,7 @@ import lombok.Setter;
 import javax.validation.constraints.Min;
 
 @Tag(name = "DTO" , description = "Data Transfer Object")
-@Schema(name = "카테고리 등록 객체", description = "카테고리 등록시 사용")
+@Schema(name = "2. Category Register DTO", description = "카테고리 등록시 사용")
 @Getter
 @Setter
 @AllArgsConstructor

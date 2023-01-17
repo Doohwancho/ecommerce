@@ -10,7 +10,7 @@ import lombok.Setter;
 import javax.validation.constraints.Size;
 
 @Tag(name = "DTO" , description = "Data Transfer Object")
-@Schema(name = "제품 업데이트 객체", description = "제품 업데이트시 사용")
+@Schema(name = "2. Product Update DTO", description = "제품 업데이트시 사용")
 @Getter
 @Setter //TODO - setter랑 builder중 setter 제거
 @Builder

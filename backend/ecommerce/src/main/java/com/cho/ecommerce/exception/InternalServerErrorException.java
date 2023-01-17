@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Tag(name = "Exception")
-@Schema(description = "INTERNAL SERVER ERROR")
+@Schema(name = "3. Interval Server Error Exception", description = "INTERNAL SERVER ERROR")
 @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 public class InternalServerErrorException extends RuntimeException {
     public InternalServerErrorException(String message) {
