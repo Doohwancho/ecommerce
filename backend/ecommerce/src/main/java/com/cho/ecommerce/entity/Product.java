@@ -12,9 +12,10 @@ import javax.validation.constraints.Min;
 @Tag(name = "VO" , description = "Value Object")
 @Schema(name = "1. PRODUCT VO", description = "제품 정보")
 @Entity
-@Builder
+@Table(name = "PRODUCT")
 @Getter
 @Setter //TODO - updateProduct 때문에 차용했지만, DTO를 사용했기 때문에 빼기
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product extends BaseEntity{

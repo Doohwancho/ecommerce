@@ -1,11 +1,5 @@
 version: "3.7"
 
-# network:
-#   frontend_network: #얘로 frontend, backend, db 같은 네트워크로 묶는 것
-#     driver: bridge
-#   backend_network:
-#     driver: bridge
-
 services:
   frontend:
     restart: always
@@ -18,32 +12,62 @@ services:
       - TZ=Asia/Seoul
     depends_on:
       - backend
-
+    
   backend:
     restart: always
     build:
       context: ./backend/ecommerce/
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
+    expose:
+      - "8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:1521/demo
-      SPRING_DATASOURCE_USERNAME: sa
-      SPRING_DATASOURCE_PASSWORD:
+      # case1) local - h2
+      # SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:1521/demo
+      # SPRING_DATASOURCE_USERNAME: sa
+      # SPRING_DATASOURCE_PASSWORD:
+      # case2) prod - mysql
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/ecommerce?autoReconnect=true&useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8 #autoReconnect=true&useSSL=false 이거 안하면 백엔드랑 디비랑 연결 안되더라. #여기서 database는 위에 mysql을 정의한 서비스 명 "database". 이걸 application.yml에서도 그대로 가져다 쓴다.
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+    networks:
+      - backend_network
     depends_on:
-        - database
-  database:
-    container_name: h2
-    image: oscarfonts/h2:latest
-    ports:
-      - 1521:1521
-      - 8081:81
-    environment:
-      H2_OPTIONS: -ifNotExists
-    volumes:
-      - ./h2/:/opt/h2-data
-    restart: always
+      - database
 
-#web-server + frontend
-#database
-#network
+  # database: #h2, for local
+  #   container_name: h2
+  #   image: oscarfonts/h2:latest
+  #   ports:
+  #     - 1521:1521
+  #     - 8081:81
+  #   environment:
+  #     H2_OPTIONS: -ifNotExists
+  #   volumes:
+  #     - ./database/h2/:/opt/h2-data
+  #   restart: always
+
+  database:
+    restart: always
+    image: mysql/mysql-server:8.0
+    command:
+      - --default-authentication-plugin=mysql_native_password #root의 default password는 "password"
+      - --character-set-server=utf8
+      - --collation-server=utf8_general_ci      
+    # ports:
+    #   - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: ecommerce # create database ecommerce; && use database ecommerce;
+      MYSQL_ROOT_HOST: "%" #set localhost -> root@%
+      MYSQL_ROOT_PASSWORD: password #root's password is password
+    volumes:
+      - ./database/mysql:/var/lib/mysql #../db에 /var/lib/mysql를 마운트함
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    driver: bridge

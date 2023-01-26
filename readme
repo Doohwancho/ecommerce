@@ -74,7 +74,7 @@ b. open ./database.vuerd.json
 
 3-1. database
 a. type of database: relational (relational | nosql | key-value | etc)
-b. database: postgres (mysql | oracle | mariadb | postgres | etc)
+b. database: mysql->postgres (mysql | oracle | mariadb | postgres | etc)
 c. persistent framework: jpa (mybatis | jpa)
 d. erd tool: vuerd
 
@@ -562,6 +562,7 @@ reference: https://github.com/syqu22/spring-boot-shop-sample
 
 1. 기획(시작시간, 마감시간 포함)
 
+
 integrate frontend and backend
 
 
@@ -581,13 +582,16 @@ integrate frontend and backend
 3. 기술선택
 
 
-1. mysql이 친숙하니, 일단 도입 후, 어느정도 튜닝이 감을 잡은 후, postgres로 migration
+1. mysql이 친숙하니, 일단 도입 후, 어느정도 감을 잡은 후, postgres로 migration
 2. js->ts conversion for type safety, reliability purpose
 3. eslint(airbnb style) for consistent frontend code convension
 4. vite for faster build
 
 
 4. 구현
+
+
+1. integrate mysql(test code for connection + docker-compose)
 
 
 

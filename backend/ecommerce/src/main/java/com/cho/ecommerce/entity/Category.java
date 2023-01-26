@@ -10,9 +10,11 @@ import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+
 @Tag(name = "VO" , description = "Value Object")
 @Schema(name = "1. CATEGORY VO", description = "카테고리")
+@Entity
+@Table(name = "CATEGORY")
 @Getter
 @Setter
 @Builder

@@ -1,7 +1,7 @@
 spring:
   config:
-      activate:
-        on-profile: local
+    activate:
+      on-profile: prod
   http:
     encoding:
       charset: UTF-8
@@ -16,35 +16,35 @@ spring:
   datasource:
     initialization-mode: always # 서버 시작시 classpath에 있는 schema.sql, data.sql 실행
     sql-script-encoding: UTF-8 # 해당 .sql파일 인코딩
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ecommerce?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: password
   jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true #sql문을 콘솔에 출력
     generate-ddl: true #ddl 생성
     hibernate:
-      ddl-auto: create-drop
-#      ddl-auto 종류
-#      create: 기존테이블 삭제 후 다시 생성 (DROP + CREATE)
-#      create-drop: create와 같으나 종료시점에 테이블 DROP
-#      update: 변경분만 반영(운영DB에서는 사용하면 안됨)
-#      validate: 엔티티와 테이블이 정상 매핑되었는지만 확인
-#      none: 사용하지 않음(사실상 없는 값이지만 관례상 none이라고 한다.)
+      ddl-auto: create
+    #      ddl-auto 종류
+    #      create: 기존테이블 삭제 후 다시 생성 (DROP + CREATE)
+    #      create-drop: create와 같으나 종료시점에 테이블 DROP
+    #      update: 변경분만 반영(운영DB에서는 사용하면 안됨)
+    #      validate: 엔티티와 테이블이 정상 매핑되었는지만 확인
+    #      none: 사용하지 않음(사실상 없는 값이지만 관례상 none이라고 한다.)
 
-#      주의할 점
-#      운영 장비에서는 절대 crate, create-drop, update 절대 사용하면 안된다. (ex. update -> entity length를 10->20 변경하면 기존 테이블 + 그 안 데이터 다날아가고 새로 생성됨)
-#      개발 초기 단계는 create 또는 update
-#      테스트 서버는 update 또는 validate
-#      스테이징과 운영 서버는 validate 또는 none
-
+    #      주의할 점
+    #      운영 장비에서는 절대 crate, create-drop, update 절대 사용하면 안된다. (ex. update -> entity length를 10->20 변경하면 기존 테이블 + 그 안 데이터 다날아가고 새로 생성됨)
+    #      개발 초기 단계는 create 또는 update
+    #      테스트 서버는 update 또는 validate
+    #      스테이징과 운영 서버는 validate 또는 none
     properties:
       hibernate:
         format_sql: true #sql을 읽기 현판 포멧으로 출력
+    logging.level:
+      org.hibernate.SQL: debug
+      org.hibernate.type.descriptor.sql.BasicBinder: trace
   jackson:
     serialization:
       fail-on-empty-beans: false
@@ -57,6 +57,7 @@ spring:
   web:
     resources:
       add-mappings: false
+
 
 server:
   error:

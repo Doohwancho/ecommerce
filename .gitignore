@@ -1,5 +1,6 @@
 # more to add aside from auto-generated .gitignore
-h2/
+database/h2/
+database/mysql/
 
 
 

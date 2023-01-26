@@ -9,17 +9,17 @@ insert into category(name, parent_id) values ('kids', 0);
 
 -- =============== Level 1 카테고리
 --
-insert into category(name, parent_id) values ('men_hat', 1l);
-insert into category(name, parent_id) values ('men_shirts', 1l);
-insert into category(name, parent_id) values ('men_pants', 1l);
+insert into category(name, parent_id) values ('men_hat', 1);
+insert into category(name, parent_id) values ('men_shirts', 1);
+insert into category(name, parent_id) values ('men_pants', 1);
 
-insert into category(name, parent_id) values ('women_hat', 2l);
-insert into category(name, parent_id) values ('women_shirts', 2l);
-insert into category(name, parent_id) values ('women_pants', 2l);
+insert into category(name, parent_id) values ('women_hat', 2);
+insert into category(name, parent_id) values ('women_shirts', 2);
+insert into category(name, parent_id) values ('women_pants', 2);
 
-insert into category(name, parent_id) values ('kids_hat', 3l);
-insert into category(name, parent_id) values ('kids_shirts', 3l);
-insert into category(name, parent_id) values ('kids_pants', 3l);
+insert into category(name, parent_id) values ('kids_hat', 3);
+insert into category(name, parent_id) values ('kids_shirts', 3);
+insert into category(name, parent_id) values ('kids_pants', 3);
 
 ---- 가전
 --insert into category(name, parent_id) values ('컴퓨터', 2l);
